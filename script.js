@@ -25,7 +25,6 @@ var playerName;
 var playerScore;
 
 window.onload = function() {
-    getPlayerName();
     board = document.getElementById("board");
     board.height = rows * blockSize;
     board.width = cols * blockSize;
@@ -105,20 +104,24 @@ function update() {
     if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize) {
         gameOver = true;
 
+        // Gets user name
+        getPlayerName();
+
         // Gets score from DOM and saves it to local storage
         playerScore = document.getElementById('scoreCounter').innerHTML;
         localStorage.setItem(playerName, playerScore);
-        
-        // Alerts Game overs
-        alert("Game Over");
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
+
+            // Gets user name
+            getPlayerName();
+
+            // Gets score from DOM and saves it to local storage
             playerScore = document.getElementById('scoreCounter').innerHTML;
             localStorage.setItem(playerName, playerScore);
-            alert("Game Over");
         }
     }
 }
@@ -160,7 +163,7 @@ function incrementScore() {
 
 // Retrieve player name via prompt
 function getPlayerName() {
-    playerName = window.prompt("Enter your name: ");
+    playerName = window.prompt("GAME OVER! Please enter your name: ");
 
     var headerText = document.getElementById('header');
     var newText = headerText.innerHTML + " - " + playerName + "\'s Turn";
