@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <title>Org Drive 2022</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <h1 id="header">Snake</h1>
+        <canvas id="board"></canvas>
+        <div class="wrapper">
+            <span class="label">Score:</span>
+            <span class="score-counter" id="scoreCounter">0</span>
+        </div>
+        <button id="modalBtn">View scores</button>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <table id="scoreTable" border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+            </div>
+        
+        </div>
+    </body>
+</html>
